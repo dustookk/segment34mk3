@@ -85,6 +85,7 @@ For refactorings and optimizations keep in mind that:
 ## Change log
 1.5
 - Adjusted graph rendering to fit a little bit better
+- X and Y axis labels can be toggled individually
 
 v1.4
 - Open Meteo added as weather source
