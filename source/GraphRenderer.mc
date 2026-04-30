@@ -23,7 +23,9 @@ class GraphRenderer {
     // Props (set via configure())
     hidden var _propGraphData as Number = 0;
     hidden var _propGraphStyle as Number = 0;
-    hidden var _propGraphAxisLabels as Boolean = false;
+    hidden var _propGraphXAxisLabels as Boolean = false;
+    hidden var _propGraphYAxisLabels as Boolean = false;
+    hidden var _xLabelYOffset as Number = 0;
     hidden var _propIs24H as Boolean = false;
     hidden var _propIsMetricDistance as Boolean = true;
 
@@ -50,7 +52,9 @@ class GraphRenderer {
         labelHeight as Number,
         propGraphData as Number,
         propGraphStyle as Number,
-        propGraphAxisLabels as Boolean,
+        propGraphXAxisLabels as Boolean,
+        propGraphYAxisLabels as Boolean,
+        xLabelYOffset as Number,
         propIs24H as Boolean,
         propIsMetricDistance as Boolean
     ) as Void {
@@ -63,7 +67,9 @@ class GraphRenderer {
         _labelHeight = labelHeight;
         _propGraphData = propGraphData;
         _propGraphStyle = propGraphStyle;
-        _propGraphAxisLabels = propGraphAxisLabels;
+        _propGraphXAxisLabels = propGraphXAxisLabels;
+        _propGraphYAxisLabels = propGraphYAxisLabels;
+        _xLabelYOffset = xLabelYOffset;
         _propIs24H = propIs24H;
         _propIsMetricDistance = propIsMetricDistance;
     }
@@ -74,7 +80,7 @@ class GraphRenderer {
         var bw = _barWidth;
         var bs = _barSpacing;
 
-        if(_propGraphAxisLabels) { y = y + _halfMarginY; }
+        if(_propGraphYAxisLabels) { y = y + _halfMarginY; }
 
         if(_propGraphData >= 8) {
             // Daily data mode: bar widths fill the device's graph area
@@ -85,8 +91,8 @@ class GraphRenderer {
         }
         var half_width = Math.round((data.size() * (bw + bs)) / 2);
 
-        // Shift right when axis labels are shown, to create space for Y-axis labels on the left
-        var xShift = _propGraphAxisLabels ? 10 : 0;
+        // Shift right when Y-axis labels are shown, to create space for Y-axis labels on the left
+        var xShift = _propGraphYAxisLabels ? 10 : 0;
 
         if(_propGraphStyle > 0) {
             // Line graph: fixed total width regardless of data point count
@@ -101,23 +107,25 @@ class GraphRenderer {
         var graphLeft = x - half_width;
         var graphRight = x + half_width;
 
-        if(_propGraphAxisLabels) {
-            dc.setColor(themeColors[fieldLbl], Graphics.COLOR_TRANSPARENT);
-            dc.setPenWidth(1);
-            dc.drawLine(graphLeft, y + h, graphRight, y + h);   // X axis
-            dc.drawLine(graphLeft, y, graphLeft, y + h);         // Y axis
+        dc.setColor(themeColors[fieldLbl], Graphics.COLOR_TRANSPARENT);
+        dc.setPenWidth(1);
+        dc.drawLine(graphLeft, y + h, graphRight, y + h);   // X axis
+        dc.drawLine(graphLeft, y, graphLeft, y + h);         // Y axis
 
+        if(_propGraphYAxisLabels) {
             dc.setColor(themeColors[dataVal], Graphics.COLOR_TRANSPARENT);
             var maxStr = formatGraphAxisValue(cachedGraphYMax);
-            dc.drawText(graphLeft - 2, y, _fontLabel, maxStr, Graphics.TEXT_JUSTIFY_RIGHT);
-            if(cachedGraphYMin != 0.0) {
-                var minStr = formatGraphAxisValue(cachedGraphYMin);
-                dc.drawText(graphLeft - 2, y + h - _labelHeight, _fontLabel, minStr, Graphics.TEXT_JUSTIFY_RIGHT);
-            }
+            dc.drawText(graphLeft - 2, y - 3, _fontLabel, maxStr, Graphics.TEXT_JUSTIFY_RIGHT);
+            var minStr = formatGraphAxisValue(cachedGraphYMin);
+            dc.drawText(graphLeft - 2, y - 3 + h - _labelHeight, _fontLabel, minStr, Graphics.TEXT_JUSTIFY_RIGHT);
+        }
+
+        if(_propGraphXAxisLabels) {
             var leftLabel = getGraphXLabel(true);
             var rightLabel = getGraphXLabel(false);
-            dc.drawText(graphLeft, y + h, _fontLabel, leftLabel, Graphics.TEXT_JUSTIFY_LEFT);
-            dc.drawText(graphRight, y + h, _fontLabel, rightLabel, Graphics.TEXT_JUSTIFY_RIGHT);
+            dc.setColor(themeColors[dataVal], Graphics.COLOR_TRANSPARENT);
+            dc.drawText(graphLeft, y + h + _xLabelYOffset, _fontLabel, leftLabel, Graphics.TEXT_JUSTIFY_LEFT);
+            dc.drawText(graphRight, y + h + _xLabelYOffset, _fontLabel, rightLabel, Graphics.TEXT_JUSTIFY_RIGHT);
         }
 
         if(graphGoalLine != null) {
@@ -171,17 +179,20 @@ class GraphRenderer {
         dc.drawLine(graphLeft, y, graphLeft, y + h);         // Y axis
 
         // Draw axis labels if enabled
-        if(_propGraphAxisLabels) {
+        if(_propGraphYAxisLabels) {
             dc.setColor(themeColors[dataVal], Graphics.COLOR_TRANSPARENT);
             var maxStr = formatGraphAxisValue(cachedGraphYMax);
             var minStr = formatGraphAxisValue(cachedGraphYMin);
-            dc.drawText(graphLeft - 2, y, _fontLabel, maxStr, Graphics.TEXT_JUSTIFY_RIGHT);
-            dc.drawText(graphLeft - 2, y + h - _labelHeight, _fontLabel, minStr, Graphics.TEXT_JUSTIFY_RIGHT);
+            dc.drawText(graphLeft - 2, y - 3, _fontLabel, maxStr, Graphics.TEXT_JUSTIFY_RIGHT);
+            dc.drawText(graphLeft - 2, y - 3 + h - _labelHeight, _fontLabel, minStr, Graphics.TEXT_JUSTIFY_RIGHT);
+        }
 
+        if(_propGraphXAxisLabels) {
             var leftLabel = getGraphXLabel(true);
             var rightLabel = getGraphXLabel(false);
-            dc.drawText(graphLeft, y + h, _fontLabel, leftLabel, Graphics.TEXT_JUSTIFY_LEFT);
-            dc.drawText(graphRight, y + h, _fontLabel, rightLabel, Graphics.TEXT_JUSTIFY_RIGHT);
+            dc.setColor(themeColors[dataVal], Graphics.COLOR_TRANSPARENT);
+            dc.drawText(graphLeft, y + h + _xLabelYOffset, _fontLabel, leftLabel, Graphics.TEXT_JUSTIFY_LEFT);
+            dc.drawText(graphRight, y + h + _xLabelYOffset, _fontLabel, rightLabel, Graphics.TEXT_JUSTIFY_RIGHT);
         }
 
         // Draw line and optional dots

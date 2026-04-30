@@ -312,7 +312,11 @@
         </settingConfig>
     </setting>
 
-    <setting propertyKey="@Properties.graphAxisLabels" title="@Strings.settings_graph_axis_labels">
+    <setting propertyKey="@Properties.graphXAxisLabels" title="@Strings.settings_graph_x_axis_labels">
+        <settingConfig type="boolean" />
+    </setting>
+
+    <setting propertyKey="@Properties.graphYAxisLabels" title="@Strings.settings_graph_y_axis_labels">
         <settingConfig type="boolean" />
     </setting>
 

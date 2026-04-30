@@ -22,7 +22,8 @@
     <property id="histogramData" type="number">0</property>
     <property id="histogramSize" type="number">0</property>
     <property id="graphStyle" type="number">0</property>
-    <property id="graphAxisLabels" type="boolean">false</property>
+    <property id="graphXAxisLabels" type="boolean">false</property>
+    <property id="graphYAxisLabels" type="boolean">false</property>
     <property id="clockOutlineStyle" type="number">0</property>
     <property id="clockGradientOverlay" type="number">0</property>
     <property id="clockFont" type="number">0</property>

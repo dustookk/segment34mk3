@@ -83,6 +83,13 @@ For refactorings and optimizations keep in mind that:
 
 
 ## Change log
+1.5
+- Adjusted graph rendering to fit a little bit better
+
+v1.4
+- Open Meteo added as weather source
+- Fixed some crashes
+
 v1.2
 - Experimental battery saving mode (off by default)
 - Some adjustments to the graph rendering

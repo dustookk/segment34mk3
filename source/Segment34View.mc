@@ -64,7 +64,8 @@ class Segment34View extends WatchUi.WatchFace {
     hidden var graphHalfWidth as Number = 0;  // max half-width of graph area; set per device in loadResources()
     hidden var propGraphSize as Number = 0;
     hidden var propGraphStyle as Number = 0;
-    hidden var propGraphAxisLabels as Boolean = false;
+    hidden var propGraphXAxisLabels as Boolean = false;
+    hidden var propGraphYAxisLabels as Boolean = false;
     hidden var bottomFieldWidths as Array<Number> = [3, 3, 3, 0];
 
     // Cached graph data — sensor history only changes once per minute,
@@ -234,8 +235,8 @@ class Segment34View extends WatchUi.WatchFace {
 
         graphRenderer.configure(
             graphBarWidth, graphBarSpacing, graphTargetWidth, graphHalfWidth, halfMarginY,
-            fontLabel, labelHeight, propGraphData, propGraphStyle, propGraphAxisLabels,
-            propIs24H, propIsMetricDistance
+            fontLabel, labelHeight, propGraphData, propGraphStyle, propGraphXAxisLabels, propGraphYAxisLabels,
+            propFontSize == 1 ? 1 : 0, propIs24H, propIsMetricDistance
         );
 
         calculateLayout();
@@ -258,7 +259,8 @@ class Segment34View extends WatchUi.WatchFace {
         propGraphData = p.getValue("histogramData") as Number;
         propGraphSize = p.getValue("histogramSize") as Number;
         propGraphStyle = p.getValue("graphStyle") as Number;
-        propGraphAxisLabels = p.getValue("graphAxisLabels") as Boolean;
+        propGraphXAxisLabels = p.getValue("graphXAxisLabels") as Boolean;
+        propGraphYAxisLabels = p.getValue("graphYAxisLabels") as Boolean;
         cachedGraphData = null; // force graph data refresh when properties change
         propSunriseFieldShows = p.getValue("sunriseFieldShows") as Number;
         propSunsetFieldShows = p.getValue("sunsetFieldShows") as Number;
@@ -437,7 +439,7 @@ class Segment34View extends WatchUi.WatchFace {
         graphBarWidth = (propGraphSize == 1) ? 2 : 1;
         graphBarSpacing = (propGraphSize == 1) ? 2 : 1;
         graphHeight = (propGraphSize == 1) ? 25 : 18;
-        graphTargetWidth = (propGraphSize == 1) ? 25 : 40;
+        graphTargetWidth = (propGraphSize == 1) ? 20 : 40;
         graphHalfWidth = screenWidth / 6;
     }
 
@@ -495,7 +497,7 @@ class Segment34View extends WatchUi.WatchFace {
         graphBarWidth = (propGraphSize == 1) ? 2 : 1;
         graphBarSpacing = (propGraphSize == 1) ? 2 : 1;
         graphHeight = (propGraphSize == 1) ? 28 : 20;
-        graphTargetWidth = (propGraphSize == 1) ? 25 : 40;
+        graphTargetWidth = (propGraphSize == 1) ? 20 : 40;
         graphHalfWidth = screenWidth / 6;
     }
 
@@ -554,7 +556,8 @@ class Segment34View extends WatchUi.WatchFace {
         baseX = centerX;
         barBottomAdj = 2;
         graphHeight = (propGraphSize == 1) ? 35 : 25;
-        graphHalfWidth = screenWidth / 6;
+        graphHalfWidth = screenWidth / 7;
+        graphTargetWidth = 30;
     }
 
     (:Round416)
@@ -612,7 +615,8 @@ class Segment34View extends WatchUi.WatchFace {
         barBottomAdj = 2;
         bottomFiveAdj = 8;
         graphHeight = (propGraphSize == 1) ? 35 : 25;
-        graphHalfWidth = screenWidth / 6;
+        graphTargetWidth = 32;
+        graphHalfWidth = screenWidth / 7;
     }
 
     (:Round454)
@@ -671,7 +675,7 @@ class Segment34View extends WatchUi.WatchFace {
         bottomDataWidth = 24;
         barBottomAdj = 2;
         graphHeight = (propGraphSize == 1) ? 40 : 30;
-        graphTargetWidth = 45;
+        graphTargetWidth = 38;
         graphHalfWidth = screenWidth / 6;
     }
 
@@ -1118,8 +1122,8 @@ class Segment34View extends WatchUi.WatchFace {
 
         // Draw Top data fields or graph
         if(propTopPartShows == 2) {
-            var xLabelSpace = propGraphAxisLabels ? labelHeight + 2 : 0;
-            yn3 = yn2 - marginY - graphHeight - xLabelSpace;
+            var bottomLabelSpace = propGraphXAxisLabels ? labelHeight + 2 : 0;
+            yn3 = yn2 - marginY - graphHeight - bottomLabelSpace;
             graphRenderer.drawGraph(dc, values[:dataGraph1], values[:dataGraph1b], centerX, yn3, graphHeight, theme.colors);
         } else {
             var top_data_height = marginY;
