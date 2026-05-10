@@ -166,6 +166,8 @@
     <string id="LABEL_PRECIP_1">OPADY</string>
     <string id="LABEL_NEXTSUN_1">SŁOŃCE</string>
     <string id="LABEL_NEXTSUN_2">NAST SŁON</string>
+    <string id="LABEL_NEXTTWI_1">TWI</string>
+    <string id="LABEL_NEXTTWI_2">NEXT TWI</string>
     <string id="LABEL_NEXTCAL_1">KAL</string>
     <string id="LABEL_NEXTCAL_2">NAST. KAL</string>
     <string id="LABEL_OX_1">TLEN</string>
@@ -266,6 +268,7 @@
     <string id="settings_sunrise_time" scope="settings">Czas wschodu słońca</string>
     <string id="settings_sunset_time" scope="settings">Czas zachodu słońca</string>
     <string id="settings_next_sun_event" scope="settings">Czas następnego zdarzenia słonecznego (wschód/zachód)</string>
+    <string id="settings_next_dawn_dusk_event" scope="settings">Następny świt/zmierzch cywilny</string>
     <string id="settings_hrs_next_sun_event" scope="settings">Godziny do następnego zdarzenia słonecznego (wschód/zachód)</string>
     <string id="settings_resting_heart_rate" scope="settings">Tętno spoczynkowe</string>
     <string id="settings_alternative_timezone_1" scope="settings">Alternatywna strefa czasowa 1</string>

@@ -220,6 +220,7 @@ class ValueResolver {
             case 63:
             case 64: return _weatherHelper.getCivilTwilightFormatted(complicationType, width);
             case 68: return _dataHelper.getDailyCounterFormatted();
+            case 69: return _weatherHelper.getNextCivilTwilightEventFormatted(width);
         }
         return "";
     }
@@ -341,6 +342,7 @@ class ValueResolver {
                 if(_propIsMetricDistance) { return formatLabel(Rez.Strings.LABEL_WKM_1, Rez.Strings.LABEL_WSWIMKM_2, labelSize); }
                 return formatLabel(Rez.Strings.LABEL_WMI_1, Rez.Strings.LABEL_WSWIMMI_2, labelSize);
             case 68: return formatLabel(Rez.Strings.LABEL_CNT_1, Rez.Strings.LABEL_CNT_2, labelSize);
+            case 69: return formatLabel(Rez.Strings.LABEL_NEXTTWI_1, Rez.Strings.LABEL_NEXTTWI_2, labelSize);
         }
         return "";
     }

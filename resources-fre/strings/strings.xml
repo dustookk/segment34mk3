@@ -166,6 +166,8 @@
     <string id="LABEL_PRECIP_1">PRÉCIP</string>
     <string id="LABEL_NEXTSUN_1">SOLEIL</string>
     <string id="LABEL_NEXTSUN_2">SOLEIL SUIV</string>
+    <string id="LABEL_NEXTTWI_1">TWI</string>
+    <string id="LABEL_NEXTTWI_2">NEXT TWI</string>
     <string id="LABEL_NEXTCAL_1">CAL</string>
     <string id="LABEL_NEXTCAL_2">CAL SUIV</string>
     <string id="LABEL_OX_1">OXYG</string>
@@ -266,6 +268,7 @@
     <string id="settings_sunrise_time" scope="settings">Heure de lever du soleil</string>
     <string id="settings_sunset_time" scope="settings">Heure de coucher du soleil</string>
     <string id="settings_next_sun_event" scope="settings">Heure du prochain événement solaire (lever/coucher)</string>
+    <string id="settings_next_dawn_dusk_event" scope="settings">Prochaine aube/crépuscule civil</string>
     <string id="settings_hrs_next_sun_event" scope="settings">Heures avant le prochain événement solaire (lever/coucher)</string>
     <string id="settings_resting_heart_rate" scope="settings">Fréquence cardiaque de repos</string>
     <string id="settings_alternative_timezone_1" scope="settings">Fuseau horaire alternatif 1</string>

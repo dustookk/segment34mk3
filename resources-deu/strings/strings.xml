@@ -166,6 +166,8 @@
     <string id="LABEL_PRECIP_1">NIEDERSCHL.</string>
     <string id="LABEL_NEXTSUN_1">SONNE</string>
     <string id="LABEL_NEXTSUN_2">NÄ. SONNE</string>
+    <string id="LABEL_NEXTTWI_1">TWI</string>
+    <string id="LABEL_NEXTTWI_2">NEXT TWI</string>
     <string id="LABEL_NEXTCAL_1">KAL</string>
     <string id="LABEL_NEXTCAL_2">NÄ. KAL</string>
     <string id="LABEL_OX_1">OX</string>
@@ -268,6 +270,7 @@
     <string id="settings_sunrise_time" scope="settings">Sonnenaufgangszeit</string>
     <string id="settings_sunset_time" scope="settings">Sonnenuntergangszeit</string>
     <string id="settings_next_sun_event" scope="settings">Nächstes Sonnenereignis</string>
+    <string id="settings_next_dawn_dusk_event" scope="settings">Nächstes Dämmerungsereignis (bürgerl. Morgen-/Abenddämmerung)</string>
     <string id="settings_alternative_timezone_1" scope="settings">Alternative Zeitzone 1</string>
     <string id="settings_alternative_timezone_2" scope="settings">Alternative Zeitzone 2</string>
     <string id="settings_barometric_pressure_raw" scope="settings">Luftdruck, roh</string>

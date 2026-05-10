@@ -278,6 +278,14 @@ class WeatherDisplayHelper {
         return "";
     }
 
+    function getNextCivilTwilightEventFormatted(width as Number) as String {
+        var nextCivilTwilightEventArray = getNextCivilTwilightEvent(_w);
+        if (nextCivilTwilightEventArray != null && nextCivilTwilightEventArray.size() == 2) {
+            return formatSunTime(nextCivilTwilightEventArray[0], width, _is24H, _hourFormat);
+        }
+        return "";
+    }
+
     function getCivilTwilightFormatted(complicationType as Number, width as Number) as String {
         if (_w != null) {
             var loc = (_w as StoredWeather).observationLocationPosition;
