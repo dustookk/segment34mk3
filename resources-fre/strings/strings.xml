@@ -166,8 +166,8 @@
     <string id="LABEL_PRECIP_1">PRÉCIP</string>
     <string id="LABEL_NEXTSUN_1">SOLEIL</string>
     <string id="LABEL_NEXTSUN_2">SOLEIL SUIV</string>
-    <string id="LABEL_NEXTTWI_1">TWI</string>
-    <string id="LABEL_NEXTTWI_2">NEXT TWI</string>
+    <string id="LABEL_NEXTTWI_1">AUB/CR</string>
+    <string id="LABEL_NEXTTWI_2">PROCH AUB/CR</string>
     <string id="LABEL_NEXTCAL_1">CAL</string>
     <string id="LABEL_NEXTCAL_2">CAL SUIV</string>
     <string id="LABEL_OX_1">OXYG</string>

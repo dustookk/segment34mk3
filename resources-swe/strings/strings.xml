@@ -166,8 +166,8 @@
     <string id="LABEL_PRECIP_1">NEDERB</string>
     <string id="LABEL_NEXTSUN_1">SOL</string>
     <string id="LABEL_NEXTSUN_2">NÄSTA SOL</string>
-    <string id="LABEL_NEXTTWI_1">TWI</string>
-    <string id="LABEL_NEXTTWI_2">NEXT TWI</string>
+    <string id="LABEL_NEXTTWI_1">GRY/SKY</string>
+    <string id="LABEL_NEXTTWI_2">NÄSTA GRY/SKY</string>
     <string id="LABEL_NEXTCAL_1">KAL</string>
     <string id="LABEL_NEXTCAL_2">NÄSTA KAL</string>
     <string id="LABEL_OX_1">OX</string>

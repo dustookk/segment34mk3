@@ -4,19 +4,19 @@ import Toybox.Lang;
 import Toybox.Time;
 import Toybox.Weather;
 
-function getNextEvent(todayFirst as Time.Moment?, todaySecond as Time.Moment?, tomorrowFirst as Time.Moment?, tomorrowSecond as Time.Moment?, now as Time.Moment) as Lang.Array {
-    if (todayFirst == null || todaySecond == null || tomorrowFirst == null || tomorrowSecond == null) {
+function getNextEvent(todayFirstEvent as Time.Moment?, todaySecondEvent as Time.Moment?, tomorrowFirstEvent as Time.Moment?, tomorrowSecondEvent as Time.Moment?, now as Time.Moment) as Lang.Array {
+    if (todayFirstEvent == null || todaySecondEvent == null || tomorrowFirstEvent == null || tomorrowSecondEvent == null) {
         return [];
     }
 
-    var first = todayFirst as Time.Moment;
+    var first = todayFirstEvent as Time.Moment;
     if (first.lessThan(now)) {
-        first = tomorrowFirst as Time.Moment;
+        first = tomorrowFirstEvent as Time.Moment;
     }
 
-    var second = todaySecond as Time.Moment;
+    var second = todaySecondEvent as Time.Moment;
     if (second.lessThan(now)) {
-        second = tomorrowSecond as Time.Moment;
+        second = tomorrowSecondEvent as Time.Moment;
     }
 
     if (first.lessThan(second)) {

@@ -166,8 +166,8 @@
     <string id="LABEL_PRECIP_1">OPADY</string>
     <string id="LABEL_NEXTSUN_1">SŁOŃCE</string>
     <string id="LABEL_NEXTSUN_2">NAST SŁON</string>
-    <string id="LABEL_NEXTTWI_1">TWI</string>
-    <string id="LABEL_NEXTTWI_2">NEXT TWI</string>
+    <string id="LABEL_NEXTTWI_1">ŚWI/ZM</string>
+    <string id="LABEL_NEXTTWI_2">N. ŚWI/ZM</string>
     <string id="LABEL_NEXTCAL_1">KAL</string>
     <string id="LABEL_NEXTCAL_2">NAST. KAL</string>
     <string id="LABEL_OX_1">TLEN</string>
