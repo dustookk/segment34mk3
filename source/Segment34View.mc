@@ -191,7 +191,6 @@ class Segment34View extends WatchUi.WatchFace {
     hidden var propSmallFontVariant as Number = 0;
     hidden var propBottomFontVariant as Number = 2;
     hidden var propStressDynamicColor as Boolean = false;
-    hidden var propExperimentalBattOpt as Boolean = false;
 
     var clockBgText = "";
 
@@ -326,7 +325,6 @@ class Segment34View extends WatchUi.WatchFace {
         propSmallFontVariant = p.getValue("smallFontVariant") as Number;
         propBottomFontVariant = p.getValue("bottomFontVariant") as Number;
         propStressDynamicColor = p.getValue("stressDynamicColor") as Boolean;
-        propExperimentalBattOpt = p.getValue("experimentalBattOpt") as Boolean;
         propWeatherProvider = p.getValue("weatherProvider") as Number;
 
         theme.resetNightMode(); // force update color theme
@@ -888,8 +886,6 @@ class Segment34View extends WatchUi.WatchFace {
         var nowMoment = Time.now();
         var unix_timestamp = nowMoment.value();
         var now = Time.Gregorian.info(nowMoment, Time.FORMAT_SHORT);
-        var needsFullRedraw = doesPartialUpdate;
-
         if(doesPartialUpdate) {
             dc.clearClip();
             doesPartialUpdate = false;
@@ -900,13 +896,11 @@ class Segment34View extends WatchUi.WatchFace {
             updateColorTheme();
             updateWeather();
             dataHelper.updateVo2History();
-            needsFullRedraw = true;
         }
 
         if(lastUpdate == null or unix_timestamp - lastUpdate >= propUpdateFreq) {
             lastUpdate = unix_timestamp;
             cachedValues = computeDisplayValues(now);
-            needsFullRedraw = true;
         } else {
             // Only update time-sensitive values
             cachedValues[:dataClock] = getClockData(now);
@@ -916,7 +910,7 @@ class Segment34View extends WatchUi.WatchFace {
         if(isSleeping and canBurnIn) {
             drawAOD(dc, now, cachedValues);
         } else {
-            drawWatchface(dc, now, false, cachedValues, propExperimentalBattOpt && !needsFullRedraw);
+            drawWatchface(dc, now, false, cachedValues, false);
         }
     }
 

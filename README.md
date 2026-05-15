@@ -87,6 +87,8 @@ For refactorings and optimizations keep in mind that:
 - Fixed issue where graph axises are shown when they shouldn't be
 - Fixed issue with icons overlapping bottom fields
 - New value: Next dawn/dusk
+- Fixed crash on vivoactive 5
+- Removed Experimental battery optimization (didn't work as expected)
 
 1.5
 - Adjusted graph rendering to fit a little bit better

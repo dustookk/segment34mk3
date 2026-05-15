@@ -1399,8 +1399,4 @@
             </settingConfig>
     </setting>
 
-    <setting propertyKey="@Properties.experimentalBattOpt" title="@Strings.settings_experimental_batt_opt">
-        <settingConfig type="boolean" />
-    </setting>
-
 </settings>
