@@ -165,6 +165,8 @@
     <string id="LABEL_PRECIP_1">PRECIP</string>
     <string id="LABEL_NEXTSUN_1">SOL</string>
     <string id="LABEL_NEXTSUN_2">PROX SOL</string>
+    <string id="LABEL_NEXTTWI_1">ALB/CRE</string>
+    <string id="LABEL_NEXTTWI_2">SIG ALB/CRE</string>
     <string id="LABEL_NEXTCAL_1">CAL</string>
     <string id="LABEL_NEXTCAL_2">PROX CAL</string>
     <string id="LABEL_OX_1">OXI</string>
@@ -265,6 +267,7 @@
     <string id="settings_sunrise_time" scope="settings">Hora amanecer</string>
     <string id="settings_sunset_time" scope="settings">Hora anochecer</string>
     <string id="settings_next_sun_event" scope="settings">Hora próximo evento solar (amanecer/anochecer)</string>
+    <string id="settings_next_dawn_dusk_event" scope="settings">Próximo amanecer/crepúsculo civil</string>
     <string id="settings_hrs_next_sun_event" scope="settings">Horas hasta próximo evento solar (amanecer/anochecer)</string>
     <string id="settings_resting_heart_rate" scope="settings">Frecuencia cardíaca en reposo</string>
     <string id="settings_alternative_timezone_1" scope="settings">Huso horario alternativo 1</string>
