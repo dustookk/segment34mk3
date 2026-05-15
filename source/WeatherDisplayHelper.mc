@@ -228,6 +228,7 @@ class WeatherDisplayHelper {
     // --- Formatted value getters for ValueResolver switch ---
 
     function getSensorTemperatureFormatted() as String {
+        if (!(SensorHistory has :getTemperatureHistory)) { return ""; }
         var tempIterator = SensorHistory.getTemperatureHistory({:period => 1});
         if (tempIterator != null) {
             var temp = tempIterator.next();

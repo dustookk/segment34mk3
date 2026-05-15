@@ -227,10 +227,10 @@ class ValueResolver {
 
     hidden function getBarometricPressureFormatted(complicationType as Number, width as Number) as String {
         var info = Activity.getActivityInfo();
-        if (complicationType == 22 && info.rawAmbientPressure != null) {
+        if (complicationType == 22 && (info has :rawAmbientPressure) && info.rawAmbientPressure != null) {
             return formatPressure(info.rawAmbientPressure / 100.0, width, _propPressureUnit);
         }
-        if (complicationType == 26 && info.meanSeaLevelPressure != null) {
+        if (complicationType == 26 && (info has :meanSeaLevelPressure) && info.meanSeaLevelPressure != null) {
             return formatPressure(info.meanSeaLevelPressure / 100.0, width, _propPressureUnit);
         }
         return "";

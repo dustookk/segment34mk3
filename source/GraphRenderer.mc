@@ -277,21 +277,28 @@ class GraphRenderer {
         var max = null;
 
         if(dataSource == 0) {
+            if(!(Toybox.SensorHistory has :getBodyBatteryHistory)) { return []; }
             iterator = Toybox.SensorHistory.getBodyBatteryHistory({:period => twoHours, :order => Toybox.SensorHistory.ORDER_OLDEST_FIRST});
             max = 100;
         } else if(dataSource == 1) {
+            if(!(Toybox.SensorHistory has :getElevationHistory)) { return []; }
             iterator = Toybox.SensorHistory.getElevationHistory({:period => twoHours, :order => Toybox.SensorHistory.ORDER_OLDEST_FIRST});
         } else if(dataSource == 2) {
+            if(!(Toybox.SensorHistory has :getHeartRateHistory)) { return []; }
             iterator = Toybox.SensorHistory.getHeartRateHistory({:period => twoHours, :order => Toybox.SensorHistory.ORDER_OLDEST_FIRST});
         } else if(dataSource == 3) {
+            if(!(Toybox.SensorHistory has :getOxygenSaturationHistory)) { return []; }
             iterator = Toybox.SensorHistory.getOxygenSaturationHistory({:period => twoHours, :order => Toybox.SensorHistory.ORDER_OLDEST_FIRST});
             max = 100;
         } else if(dataSource == 4) {
+            if(!(Toybox.SensorHistory has :getPressureHistory)) { return []; }
             iterator = Toybox.SensorHistory.getPressureHistory({:period => twoHours, :order => Toybox.SensorHistory.ORDER_OLDEST_FIRST});
         } else if(dataSource == 5 or dataSource == 7) {
+            if(!(Toybox.SensorHistory has :getStressHistory)) { return []; }
             iterator = Toybox.SensorHistory.getStressHistory({:period => twoHours, :order => Toybox.SensorHistory.ORDER_OLDEST_FIRST});
             max = 100;
         } else if(dataSource == 6) {
+            if(!(Toybox.SensorHistory has :getTemperatureHistory)) { return []; }
             iterator = Toybox.SensorHistory.getTemperatureHistory({:period => twoHours, :order => Toybox.SensorHistory.ORDER_OLDEST_FIRST});
         }
 
