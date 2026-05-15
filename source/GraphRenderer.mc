@@ -107,10 +107,12 @@ class GraphRenderer {
         var graphLeft = x - half_width;
         var graphRight = x + half_width;
 
-        dc.setColor(themeColors[fieldLbl], Graphics.COLOR_TRANSPARENT);
-        dc.setPenWidth(1);
-        dc.drawLine(graphLeft, y + h, graphRight, y + h);   // X axis
-        dc.drawLine(graphLeft, y, graphLeft, y + h);         // Y axis
+        if(_propGraphXAxisLabels || _propGraphYAxisLabels) {
+            dc.setColor(themeColors[fieldLbl], Graphics.COLOR_TRANSPARENT);
+            dc.setPenWidth(1);
+            dc.drawLine(graphLeft, y + h, graphRight, y + h);   // X axis
+            dc.drawLine(graphLeft, y, graphLeft, y + h);         // Y axis
+        }
 
         if(_propGraphYAxisLabels) {
             dc.setColor(themeColors[dataVal], Graphics.COLOR_TRANSPARENT);
@@ -172,11 +174,13 @@ class GraphRenderer {
         var graphRight = x + half_width;
         var totalW = graphRight - graphLeft;
 
-        // Draw axes
-        dc.setColor(themeColors[fieldLbl], Graphics.COLOR_TRANSPARENT);
-        dc.setPenWidth(1);
-        dc.drawLine(graphLeft, y + h, graphRight, y + h);   // X axis
-        dc.drawLine(graphLeft, y, graphLeft, y + h);         // Y axis
+        // Draw axes only if at least one axis label is enabled
+        if(_propGraphXAxisLabels || _propGraphYAxisLabels) {
+            dc.setColor(themeColors[fieldLbl], Graphics.COLOR_TRANSPARENT);
+            dc.setPenWidth(1);
+            dc.drawLine(graphLeft, y + h, graphRight, y + h);   // X axis
+            dc.drawLine(graphLeft, y, graphLeft, y + h);         // Y axis
+        }
 
         // Draw axis labels if enabled
         if(_propGraphYAxisLabels) {

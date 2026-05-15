@@ -83,6 +83,11 @@ For refactorings and optimizations keep in mind that:
 
 
 ## Change log
+1.6
+- Fixed issue where graph axises are shown when they shouldn't be
+- Fixed issue with icons overlapping bottom fields
+- New value: Next dawn/dusk
+
 1.5
 - Adjusted graph rendering to fit a little bit better
 - X and Y axis labels can be toggled individually
