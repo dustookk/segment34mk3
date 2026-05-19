@@ -22,8 +22,7 @@ enum colorNames {
     notif,
     stress,
     bodybatt,
-    moon,
-    lowBatt
+    moon
 }
 
 (:background_excluded)
@@ -75,7 +74,7 @@ class Segment34View extends WatchUi.WatchFace {
     hidden var lastGraphMinute as Number = -1;
 
     hidden var fontMoon as WatchUi.FontResource?;
-    hidden var fontIcons as WatchUi.FontResource;
+    hidden var fontIcons as WatchUi.FontResource?;
     hidden var fontClock as WatchUi.FontResource?;
     hidden var fontClockOutline as WatchUi.FontResource?;
     hidden var fontLabel as WatchUi.FontResource?;
@@ -208,7 +207,6 @@ class Segment34View extends WatchUi.WatchFace {
         canBurnIn = System.getDeviceSettings().requiresBurnInProtection;
         screenHeight = Toybox.System.getDeviceSettings().screenHeight;
         screenWidth = Toybox.System.getDeviceSettings().screenWidth;
-        fontIcons = Application.loadResource(Rez.Fonts.icons);
         centerX = Math.round(screenWidth / 2);
         centerY = Math.round(screenHeight / 2);
         marginY = Math.round(screenHeight / 30);
@@ -424,6 +422,7 @@ class Segment34View extends WatchUi.WatchFace {
             bottomFieldWidths = [4, 4, 0, 0];
         }
 
+        fontIcons = Application.loadResource(Rez.Fonts.icons);
         clockHeight = 80;
         clockWidth = 230;
         labelMargin = 6;
@@ -483,6 +482,7 @@ class Segment34View extends WatchUi.WatchFace {
             bottomFieldWidths = [3, 3, 3, 0];
         }
 
+        fontIcons = Application.loadResource(Rez.Fonts.icons);
         clockHeight = 80;
         clockWidth = 240;
         labelMargin = 6;
@@ -545,6 +545,7 @@ class Segment34View extends WatchUi.WatchFace {
 
         loadAODGraphics();
 
+        fontIcons = Application.loadResource(Rez.Fonts.icons_large);
         clockHeight = 125;
         labelMargin = 8;
         tinyDataHeight = 13;
@@ -602,6 +603,7 @@ class Segment34View extends WatchUi.WatchFace {
 
         loadAODGraphics();
 
+        fontIcons = Application.loadResource(Rez.Fonts.icons_large);
         clockHeight = 125;
         clockWidth = 360;
         labelMargin = 8;
@@ -664,6 +666,7 @@ class Segment34View extends WatchUi.WatchFace {
         clockWidth = 415;
         loadAODGraphics();
 
+        fontIcons = Application.loadResource(Rez.Fonts.icons_large);
         labelMargin = 8;
         tinyDataHeight = 13;
         largeDataHeight = 27;
@@ -724,6 +727,7 @@ class Segment34View extends WatchUi.WatchFace {
         clockWidth = 415;
         loadAODGraphics();
 
+        fontIcons = Application.loadResource(Rez.Fonts.icons_large);
         labelMargin = 8;
         tinyDataHeight = 13;
         largeDataHeight = 27;
@@ -1463,8 +1467,13 @@ class Segment34View extends WatchUi.WatchFace {
         dc.drawText(x, y, fontIcons, iconStr, justify | Graphics.TEXT_JUSTIFY_VCENTER);
         if(!countStr.equals("")) {
             var labelX = justify == Graphics.TEXT_JUSTIFY_RIGHT ? x - 8 : x + 10;
+            var labelY = y - 4;
+            if(screenWidth >= 390) {
+                labelX = justify == Graphics.TEXT_JUSTIFY_RIGHT ? x - 5 : x + 14;
+                labelY = y - 5;
+            }
             dc.setColor(theme.colors[bg], Graphics.COLOR_TRANSPARENT);
-            dc.drawText(labelX, y - 4, fontLabel, countStr, Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
+            dc.drawText(labelX, labelY, fontLabel, countStr, Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
             dc.setColor(theme.colors[dataVal], Graphics.COLOR_TRANSPARENT);
         }
     }

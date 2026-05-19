@@ -35,6 +35,7 @@
     <font id="segments145outline_4" filename="segments145outline_4.fnt" antialias="true" filter=" #1234567890:ABP" />
 
     <font id="icons" filename="icons.fnt" antialias="true" />
+    <font id="icons_large" filename="icons_large.fnt" antialias="true" />
     <font id="led" filename="led.fnt" antialias="false" />
     <font id="led_inbetween" filename="led_inbetween.fnt" antialias="true" />
     <font id="led_lines" filename="led_lines.fnt" antialias="false" />
