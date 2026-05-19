@@ -185,6 +185,12 @@
     <string id="LABEL_RHR_2">REST HR</string>
     <string id="LABEL_CNT_1">CNT</string>
     <string id="LABEL_CNT_2">COUNTER</string>
+    <string id="LABEL_MOONRISE_1">MRISE</string>
+    <string id="LABEL_MOONSET_1">MSET</string>
+    <string id="LABEL_GOLDEND_1">GH END</string>
+    <string id="LABEL_GOLDEND_2">GH END</string>
+    <string id="LABEL_GOLDENS_1">GH ST</string>
+    <string id="LABEL_GOLDENS_2">GH START</string>
 
     <!-- Settings strings with scope="settings" -->
     <string id="settings_color_theme" scope="settings">Color Theme</string>
@@ -506,4 +512,8 @@
     <string id="settings_every_30_min" scope="settings">Every 30 min</string>
     <string id="settings_every_hour" scope="settings">Every hour</string>
     <string id="settings_every_2_hours" scope="settings">Every 2 hours</string>
+    <string id="settings_moonrise_time" scope="settings">Moon rise time</string>
+    <string id="settings_moonset_time" scope="settings">Moon set time</string>
+    <string id="settings_golden_hour_end" scope="settings">Golden hour end (morning)</string>
+    <string id="settings_golden_hour_start" scope="settings">Golden hour start (evening)</string>
 </strings>

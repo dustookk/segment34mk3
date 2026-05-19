@@ -64,6 +64,47 @@ function getNextCivilTwilightEvent(weatherCondition as StoredWeather?) as Lang.A
     return [];
 }
 
+// Returns [moonrise, moonset] for today derived from sunrise/sunset using h0=+0.125°.
+// Uses the same back-calculation approach as getCivilTwilight.
+// Returns [] if location or sun times are unavailable.
+function getMoonRiseSet(weatherCondition as StoredWeather?) as Lang.Array {
+    var now = Time.now();
+    if (weatherCondition != null) {
+        var loc = weatherCondition.observationLocationPosition;
+        if (loc != null) {
+            var sunrise = Weather.getSunrise(loc, now);
+            var sunset  = Weather.getSunset(loc, now);
+            if (sunrise != null && sunset != null) {
+                var latDeg = loc.toDegrees()[0];
+                var result = getSolarHorizonEvent(latDeg as Float, sunrise, sunset, 0.125f);
+                if (result != null) { return result as Array; }
+            }
+        }
+    }
+    return [];
+}
+
+// Returns [goldenHourEnd, goldenHourStart] where:
+//   goldenHourEnd   = morning time when sun rises above +6° (end of morning golden hour)
+//   goldenHourStart = evening time when sun descends to +6° (start of evening golden hour)
+// Returns [] if unavailable.
+function getGoldenHour(weatherCondition as StoredWeather?) as Lang.Array {
+    var now = Time.now();
+    if (weatherCondition != null) {
+        var loc = weatherCondition.observationLocationPosition;
+        if (loc != null) {
+            var sunrise = Weather.getSunrise(loc, now);
+            var sunset  = Weather.getSunset(loc, now);
+            if (sunrise != null && sunset != null) {
+                var latDeg = loc.toDegrees()[0];
+                var result = getSolarHorizonEvent(latDeg as Float, sunrise, sunset, 6.0f);
+                if (result != null) { return result as Array; }
+            }
+        }
+    }
+    return [];
+}
+
 function hoursToNextSunEvent(weatherCondition as StoredWeather?) as Lang.String {
     var nextSunEventArray = getNextSunEvent(weatherCondition);
     if (nextSunEventArray != null && nextSunEventArray.size() == 2) {

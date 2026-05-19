@@ -150,6 +150,19 @@ function formatSunTime(s as Time.Moment?, width as Number, propIs24H as Boolean,
 // dawn = civil dawn (sun at -6°), dusk = civil dusk (sun at -6°).
 // Requires: lat_deg (latitude in degrees), sunrise and sunset as Time.Moment.
 function getCivilTwilight(lat_deg as Double, sunrise as Time.Moment, sunset as Time.Moment) as Array? {
+    return getSolarHorizonEvent(lat_deg, sunrise, sunset, -6.0f);
+}
+
+// Returns [rise, set] as Time.Moment objects for a body that rises/sets when the Sun is
+// at elevation h0_deg above/below the horizon. Positive h0 means the sun is above the
+// horizon at the event time (e.g. golden hour end at +5°); negative means below (e.g.
+// civil twilight at -6°, sun horizon at -0.8333°, moon at +0.125°).
+//
+// Algorithm: back-calculates solar declination from the provided sunrise/sunset times,
+// then solves the hour-angle equation for the requested h0.
+//
+// Returns null when the event doesn't occur (polar conditions or out-of-range h0).
+function getSolarHorizonEvent(lat_deg as Numeric, sunrise as Time.Moment, sunset as Time.Moment, h0_deg as Numeric) as Array? {
     var PI = Math.PI;
     var lat = lat_deg * PI / 180.0;
 
@@ -158,25 +171,29 @@ function getCivilTwilight(lat_deg as Double, sunrise as Time.Moment, sunset as T
     var H0 = half_day_s / 86400.0 * 2.0 * PI;
 
     // Back-calculate solar declination from H0 and latitude.
-    // sunrise formula: cos(H0) = (sin(h0) - sin(lat)*sin(dec)) / (cos(lat)*cos(dec))
-    // where h0 = -0.8333° (includes atmospheric refraction + solar disc)
-    var sin_h0 = Math.sin(-0.8333 * PI / 180.0);
+    // sunrise formula: cos(H0) = (sin(h0_sun) - sin(lat)*sin(dec)) / (cos(lat)*cos(dec))
+    // where h0_sun = -0.8333° (atmospheric refraction + solar disc radius)
+    var sin_h0_sun = Math.sin(-0.8333 * PI / 180.0);
     var a = Math.cos(H0) * Math.cos(lat);
     var b = Math.sin(lat);
     var R = Math.sqrt(a * a + b * b);
-    var ratio = sin_h0 / R;
+    var ratio = sin_h0_sun / R;
     if (ratio < -1.0 || ratio > 1.0) { return null; }
     var alpha = Math.atan2(b, a);
     var dec = alpha - Math.acos(ratio); // valid root; other root is always ~180°+
 
-    // Hour angle for civil twilight (sun at -6°)
-    var cos_H_civil = (Math.sin(-6.0 * PI / 180.0) - Math.sin(lat) * Math.sin(dec)) /
-                      (Math.cos(lat) * Math.cos(dec));
-    if (cos_H_civil > 1.0) { return null; } // polar twilight — sun never drops below -6°
-    if (cos_H_civil < -1.0) { return null; } // shouldn't happen when sunrise is valid
-    var H_civil = Math.acos(cos_H_civil);
+    // Hour angle for the requested h0
+    var cos_H = (Math.sin(h0_deg * PI / 180.0) - Math.sin(lat) * Math.sin(dec)) /
+                (Math.cos(lat) * Math.cos(dec));
+    if (cos_H > 1.0) { return null; } // event never occurs (sun always below h0)
+    if (cos_H < -1.0) { return null; } // event never occurs (sun always above h0)
+    var H = Math.acos(cos_H);
 
-    var delta_s = (H_civil - H0) / (2.0 * PI) * 86400.0;
+    // Convert hour-angle delta to seconds: delta = (H - H0) / (2π) * 86400
+    // Positive h0 → H < H0 → delta negative → rise is after sunrise, set is before sunset
+    var delta_s = (H - H0) / (2.0 * PI) * 86400.0;
     var delta = new Time.Duration(delta_s.toNumber());
+    // rise = sunrise - delta  (negative delta means after sunrise)
+    // set  = sunset  + delta  (negative delta means before sunset)
     return [sunrise.subtract(delta), sunset.add(delta)];
 }

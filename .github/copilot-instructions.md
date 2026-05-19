@@ -2,9 +2,6 @@
 
 A Garmin Connect IQ watchface written in **Monkey C** (`.mc` files), targeting ~64 Garmin devices across multiple screen sizes and display technologies.
 
-## No summary at the end
-When running on autopilot, do not trigger another premium prompt at the end just to summarize what you just did. 
-
 ## Build & Test
 
 **Build (type-check, no simulator):**

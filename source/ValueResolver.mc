@@ -221,6 +221,10 @@ class ValueResolver {
             case 64: return _weatherHelper.getCivilTwilightFormatted(complicationType, width);
             case 68: return _dataHelper.getDailyCounterFormatted();
             case 69: return _weatherHelper.getNextCivilTwilightEventFormatted(width);
+            case 70:
+            case 71: return _weatherHelper.getMoonRiseSetFormatted(complicationType, width);
+            case 72:
+            case 73: return _weatherHelper.getGoldenHourFormatted(complicationType, width);
         }
         return "";
     }
@@ -343,6 +347,10 @@ class ValueResolver {
                 return formatLabel(Rez.Strings.LABEL_WMI_1, Rez.Strings.LABEL_WSWIMMI_2, labelSize);
             case 68: return formatLabel(Rez.Strings.LABEL_CNT_1, Rez.Strings.LABEL_CNT_2, labelSize);
             case 69: return formatLabel(Rez.Strings.LABEL_NEXTTWI_1, Rez.Strings.LABEL_NEXTTWI_2, labelSize);
+            case 70: return Application.loadResource(Rez.Strings.LABEL_MOONRISE_1) as String;
+            case 71: return Application.loadResource(Rez.Strings.LABEL_MOONSET_1) as String;
+            case 72: return formatLabel(Rez.Strings.LABEL_GOLDEND_1, Rez.Strings.LABEL_GOLDEND_2, labelSize);
+            case 73: return formatLabel(Rez.Strings.LABEL_GOLDENS_1, Rez.Strings.LABEL_GOLDENS_2, labelSize);
         }
         return "";
     }
