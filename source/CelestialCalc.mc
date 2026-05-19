@@ -1,8 +1,11 @@
-// Sun/twilight calculation utilities
+// Celestial body calculations: sun, moon, twilight, golden hour.
 
 import Toybox.Lang;
+import Toybox.Math;
 import Toybox.Time;
 import Toybox.Weather;
+
+// ── Next-event helpers ────────────────────────────────────────────────────────
 
 function getNextEvent(todayFirstEvent as Time.Moment?, todaySecondEvent as Time.Moment?, tomorrowFirstEvent as Time.Moment?, tomorrowSecondEvent as Time.Moment?, now as Time.Moment) as Lang.Array {
     if (todayFirstEvent == null || todaySecondEvent == null || tomorrowFirstEvent == null || tomorrowSecondEvent == null) {
@@ -64,29 +67,26 @@ function getNextCivilTwilightEvent(weatherCondition as StoredWeather?) as Lang.A
     return [];
 }
 
-// Returns [moonrise, moonset] for today derived from sunrise/sunset using h0=+0.125°.
-// Uses the same back-calculation approach as getCivilTwilight.
-// Returns [] if location or sun times are unavailable.
-function getMoonRiseSet(weatherCondition as StoredWeather?) as Lang.Array {
-    var now = Time.now();
-    if (weatherCondition != null) {
-        var loc = weatherCondition.observationLocationPosition;
-        if (loc != null) {
-            var sunrise = Weather.getSunrise(loc, now);
-            var sunset  = Weather.getSunset(loc, now);
-            if (sunrise != null && sunset != null) {
-                var latDeg = loc.toDegrees()[0];
-                var result = getSolarHorizonEvent(latDeg as Float, sunrise, sunset, 0.125f);
-                if (result != null) { return result as Array; }
-            }
+function hoursToNextSunEvent(weatherCondition as StoredWeather?) as Lang.String {
+    var nextSunEventArray = getNextSunEvent(weatherCondition);
+    if (nextSunEventArray != null && nextSunEventArray.size() == 2) {
+        var nextSunEvent = nextSunEventArray[0] as Time.Moment;
+        var now = Time.now();
+        // Converting seconds to hours
+        var diff = (nextSunEvent.subtract(now)).value();
+        if (diff >= 36000) { // No decimals if 10+ hours
+            return (diff / 3600.0).format("%d");
         }
+        return (diff / 3600.0).format("%.1f");
     }
-    return [];
+    return "";
 }
 
-// Returns [goldenHourEnd, goldenHourStart] where:
-//   goldenHourEnd   = morning time when sun rises above +6° (end of morning golden hour)
-//   goldenHourStart = evening time when sun descends to +6° (start of evening golden hour)
+// ── Golden hour ───────────────────────────────────────────────────────────────
+
+// Returns [goldenHourEnd, goldenHourStart]:
+//   goldenHourEnd   = morning time sun rises above +6° (end of morning golden hour)
+//   goldenHourStart = evening time sun descends to +6° (start of evening golden hour)
 // Returns [] if unavailable.
 function getGoldenHour(weatherCondition as StoredWeather?) as Lang.Array {
     var now = Time.now();
@@ -103,19 +103,4 @@ function getGoldenHour(weatherCondition as StoredWeather?) as Lang.Array {
         }
     }
     return [];
-}
-
-function hoursToNextSunEvent(weatherCondition as StoredWeather?) as Lang.String {
-    var nextSunEventArray = getNextSunEvent(weatherCondition);
-    if (nextSunEventArray != null && nextSunEventArray.size() == 2) {
-        var nextSunEvent = nextSunEventArray[0] as Time.Moment;
-        var now = Time.now();
-        // Converting seconds to hours
-        var diff = (nextSunEvent.subtract(now)).value();
-        if (diff >= 36000) { // No decimals if 10+ hours
-            return (diff / 3600.0).format("%d");
-        }
-        return (diff / 3600.0).format("%.1f");
-    }
-    return "";
 }

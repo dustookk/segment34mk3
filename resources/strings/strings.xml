@@ -512,8 +512,6 @@
     <string id="settings_every_30_min" scope="settings">Every 30 min</string>
     <string id="settings_every_hour" scope="settings">Every hour</string>
     <string id="settings_every_2_hours" scope="settings">Every 2 hours</string>
-    <string id="settings_moonrise_time" scope="settings">Moon rise time</string>
-    <string id="settings_moonset_time" scope="settings">Moon set time</string>
     <string id="settings_golden_hour_end" scope="settings">Golden hour end (morning)</string>
     <string id="settings_golden_hour_start" scope="settings">Golden hour start (evening)</string>
 </strings>

@@ -192,8 +192,6 @@
     <string id="LABEL_GOLDEND_2">GT SLUT</string>
     <string id="LABEL_GOLDENS_1">GT BÖR</string>
     <string id="LABEL_GOLDENS_2">GT BÖRJAR</string>
-    <string id="settings_moonrise_time" scope="settings">Månuppgång</string>
-    <string id="settings_moonset_time" scope="settings">Månnedgång</string>
     <string id="settings_golden_hour_end" scope="settings">Guldtimme slut (morgon)</string>
     <string id="settings_golden_hour_start" scope="settings">Guldtimme börjar (kväll)</string>
 </strings>

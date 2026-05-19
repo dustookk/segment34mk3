@@ -189,8 +189,6 @@
             <listEntry value="69">@Strings.settings_next_dawn_dusk_event</listEntry>
             <listEntry value="63">@Strings.settings_civil_dawn</listEntry>
             <listEntry value="64">@Strings.settings_civil_dusk</listEntry>
-            <listEntry value="70">@Strings.settings_moonrise_time</listEntry>
-            <listEntry value="71">@Strings.settings_moonset_time</listEntry>
             <listEntry value="72">@Strings.settings_golden_hour_end</listEntry>
             <listEntry value="73">@Strings.settings_golden_hour_start</listEntry>
             <listEntry value="56">@Strings.settings_hrs_next_sun_event</listEntry>
@@ -259,8 +257,6 @@
             <listEntry value="69">@Strings.settings_next_dawn_dusk_event</listEntry>
             <listEntry value="63">@Strings.settings_civil_dawn</listEntry>
             <listEntry value="64">@Strings.settings_civil_dusk</listEntry>
-            <listEntry value="70">@Strings.settings_moonrise_time</listEntry>
-            <listEntry value="71">@Strings.settings_moonset_time</listEntry>
             <listEntry value="72">@Strings.settings_golden_hour_end</listEntry>
             <listEntry value="73">@Strings.settings_golden_hour_start</listEntry>
             <listEntry value="56">@Strings.settings_hrs_next_sun_event</listEntry>
@@ -538,8 +534,6 @@
             <listEntry value="69">@Strings.settings_next_dawn_dusk_event</listEntry>
             <listEntry value="63">@Strings.settings_civil_dawn</listEntry>
             <listEntry value="64">@Strings.settings_civil_dusk</listEntry>
-            <listEntry value="70">@Strings.settings_moonrise_time</listEntry>
-            <listEntry value="71">@Strings.settings_moonset_time</listEntry>
             <listEntry value="72">@Strings.settings_golden_hour_end</listEntry>
             <listEntry value="73">@Strings.settings_golden_hour_start</listEntry>
             <listEntry value="56">@Strings.settings_hrs_next_sun_event</listEntry>
@@ -608,8 +602,6 @@
             <listEntry value="69">@Strings.settings_next_dawn_dusk_event</listEntry>
             <listEntry value="63">@Strings.settings_civil_dawn</listEntry>
             <listEntry value="64">@Strings.settings_civil_dusk</listEntry>
-            <listEntry value="70">@Strings.settings_moonrise_time</listEntry>
-            <listEntry value="71">@Strings.settings_moonset_time</listEntry>
             <listEntry value="72">@Strings.settings_golden_hour_end</listEntry>
             <listEntry value="73">@Strings.settings_golden_hour_start</listEntry>
             <listEntry value="56">@Strings.settings_hrs_next_sun_event</listEntry>
@@ -678,8 +670,6 @@
             <listEntry value="69">@Strings.settings_next_dawn_dusk_event</listEntry>
             <listEntry value="63">@Strings.settings_civil_dawn</listEntry>
             <listEntry value="64">@Strings.settings_civil_dusk</listEntry>
-            <listEntry value="70">@Strings.settings_moonrise_time</listEntry>
-            <listEntry value="71">@Strings.settings_moonset_time</listEntry>
             <listEntry value="72">@Strings.settings_golden_hour_end</listEntry>
             <listEntry value="73">@Strings.settings_golden_hour_start</listEntry>
             <listEntry value="56">@Strings.settings_hrs_next_sun_event</listEntry>
@@ -748,8 +738,6 @@
             <listEntry value="69">@Strings.settings_next_dawn_dusk_event</listEntry>
             <listEntry value="63">@Strings.settings_civil_dawn</listEntry>
             <listEntry value="64">@Strings.settings_civil_dusk</listEntry>
-            <listEntry value="70">@Strings.settings_moonrise_time</listEntry>
-            <listEntry value="71">@Strings.settings_moonset_time</listEntry>
             <listEntry value="72">@Strings.settings_golden_hour_end</listEntry>
             <listEntry value="73">@Strings.settings_golden_hour_start</listEntry>
             <listEntry value="56">@Strings.settings_hrs_next_sun_event</listEntry>
@@ -813,8 +801,6 @@
             <listEntry value="69">@Strings.settings_next_dawn_dusk_event</listEntry>
             <listEntry value="63">@Strings.settings_civil_dawn</listEntry>
             <listEntry value="64">@Strings.settings_civil_dusk</listEntry>
-            <listEntry value="70">@Strings.settings_moonrise_time</listEntry>
-            <listEntry value="71">@Strings.settings_moonset_time</listEntry>
             <listEntry value="72">@Strings.settings_golden_hour_end</listEntry>
             <listEntry value="73">@Strings.settings_golden_hour_start</listEntry>
             <listEntry value="56">@Strings.settings_hrs_next_sun_event</listEntry>
@@ -857,8 +843,6 @@
             <listEntry value="69">@Strings.settings_next_dawn_dusk_event</listEntry>
             <listEntry value="63">@Strings.settings_civil_dawn</listEntry>
             <listEntry value="64">@Strings.settings_civil_dusk</listEntry>
-            <listEntry value="70">@Strings.settings_moonrise_time</listEntry>
-            <listEntry value="71">@Strings.settings_moonset_time</listEntry>
             <listEntry value="72">@Strings.settings_golden_hour_end</listEntry>
             <listEntry value="73">@Strings.settings_golden_hour_start</listEntry>
             <listEntry value="56">@Strings.settings_hrs_next_sun_event</listEntry>
@@ -972,8 +956,6 @@
             <listEntry value="69">@Strings.settings_next_dawn_dusk_event</listEntry>
             <listEntry value="63">@Strings.settings_civil_dawn</listEntry>
             <listEntry value="64">@Strings.settings_civil_dusk</listEntry>
-            <listEntry value="70">@Strings.settings_moonrise_time</listEntry>
-            <listEntry value="71">@Strings.settings_moonset_time</listEntry>
             <listEntry value="72">@Strings.settings_golden_hour_end</listEntry>
             <listEntry value="73">@Strings.settings_golden_hour_start</listEntry>
             <listEntry value="56">@Strings.settings_hrs_next_sun_event</listEntry>

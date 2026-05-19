@@ -192,8 +192,6 @@
     <string id="LABEL_GOLDEND_2">GS ENDE</string>
     <string id="LABEL_GOLDENS_1">GS ANF</string>
     <string id="LABEL_GOLDENS_2">GS ANFANG</string>
-    <string id="settings_moonrise_time" scope="settings">Mondaufgang</string>
-    <string id="settings_moonset_time" scope="settings">Monduntergang</string>
     <string id="settings_golden_hour_end" scope="settings">Goldene Stunde Ende (Morgen)</string>
     <string id="settings_golden_hour_start" scope="settings">Goldene Stunde Beginn (Abend)</string>
 </strings>

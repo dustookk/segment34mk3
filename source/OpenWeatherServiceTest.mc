@@ -2,7 +2,7 @@ import Toybox.Test;
 import Toybox.Lang;
 
 // Unit tests for OpenWeatherService.owmCodeToGarmin()
-// These test the OWM weather code -> Garmin condition enum mapping.
+// OWM weather code → Garmin condition enum mapping.
 // Run with: monkeyc --unit-test -d fenix7
 
 (:test)

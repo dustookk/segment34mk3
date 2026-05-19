@@ -192,8 +192,6 @@
     <string id="LABEL_GOLDEND_2">HO FIN</string>
     <string id="LABEL_GOLDENS_1">HO DEB</string>
     <string id="LABEL_GOLDENS_2">HO DEBUT</string>
-    <string id="settings_moonrise_time" scope="settings">Heure de lever de lune</string>
-    <string id="settings_moonset_time" scope="settings">Heure de coucher de lune</string>
     <string id="settings_golden_hour_end" scope="settings">Fin heure dorée (matin)</string>
     <string id="settings_golden_hour_start" scope="settings">Début heure dorée (soir)</string>
 </strings>

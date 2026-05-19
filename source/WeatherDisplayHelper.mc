@@ -306,16 +306,6 @@ class WeatherDisplayHelper {
         return "";
     }
 
-    // complicationType 70 = moonrise, 71 = moonset
-    function getMoonRiseSetFormatted(complicationType as Number, width as Number) as String {
-        var result = getMoonRiseSet(_w);
-        if (result != null && result.size() == 2) {
-            var t = (complicationType == 70) ? result[0] : result[1];
-            return formatSunTime(t as Time.Moment?, width, _is24H, _hourFormat);
-        }
-        return "";
-    }
-
     // complicationType 72 = golden hour end (morning), 73 = golden hour start (evening)
     function getGoldenHourFormatted(complicationType as Number, width as Number) as String {
         var result = getGoldenHour(_w);

@@ -222,7 +222,7 @@ class ValueResolver {
             case 68: return _dataHelper.getDailyCounterFormatted();
             case 69: return _weatherHelper.getNextCivilTwilightEventFormatted(width);
             case 70:
-            case 71: return _weatherHelper.getMoonRiseSetFormatted(complicationType, width);
+            case 71: return "";
             case 72:
             case 73: return _weatherHelper.getGoldenHourFormatted(complicationType, width);
         }
