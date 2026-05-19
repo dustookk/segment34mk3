@@ -85,6 +85,8 @@ For refactorings and optimizations keep in mind that:
 ## Change log
 1.7
 - Larger icons on high res screens
+- Value for Golden hour
+
 
 1.6
 - Fixed issue where graph axises are shown when they shouldn't be

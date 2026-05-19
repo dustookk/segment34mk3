@@ -192,6 +192,9 @@
     <string id="LABEL_GOLDEND_2">ZS KONIEC</string>
     <string id="LABEL_GOLDENS_1">ZS POC</string>
     <string id="LABEL_GOLDENS_2">ZS POCZATEK</string>
+    <string id="LABEL_MOON_ILLUM_1">M ILL</string>
+    <string id="LABEL_MOON_ILLUM_2">ILLUM KSIĘŻ</string>
     <string id="settings_golden_hour_end" scope="settings">Koniec złotej godziny (rano)</string>
     <string id="settings_golden_hour_start" scope="settings">Początek złotej godziny (wieczór)</string>
+    <string id="settings_moon_illumination" scope="settings">Oświetlenie księżyca %</string>
 </strings>

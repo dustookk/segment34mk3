@@ -191,6 +191,7 @@
             <listEntry value="64">@Strings.settings_civil_dusk</listEntry>
             <listEntry value="72">@Strings.settings_golden_hour_end</listEntry>
             <listEntry value="73">@Strings.settings_golden_hour_start</listEntry>
+            <listEntry value="74">@Strings.settings_moon_illumination</listEntry>
             <listEntry value="56">@Strings.settings_hrs_next_sun_event</listEntry>
             <listEntry value="15">@Strings.settings_alternative_timezone_1</listEntry>
             <listEntry value="37">@Strings.settings_alternative_timezone_2</listEntry>
@@ -259,6 +260,7 @@
             <listEntry value="64">@Strings.settings_civil_dusk</listEntry>
             <listEntry value="72">@Strings.settings_golden_hour_end</listEntry>
             <listEntry value="73">@Strings.settings_golden_hour_start</listEntry>
+            <listEntry value="74">@Strings.settings_moon_illumination</listEntry>
             <listEntry value="56">@Strings.settings_hrs_next_sun_event</listEntry>
             <listEntry value="15">@Strings.settings_alternative_timezone_1</listEntry>
             <listEntry value="37">@Strings.settings_alternative_timezone_2</listEntry>
@@ -536,6 +538,7 @@
             <listEntry value="64">@Strings.settings_civil_dusk</listEntry>
             <listEntry value="72">@Strings.settings_golden_hour_end</listEntry>
             <listEntry value="73">@Strings.settings_golden_hour_start</listEntry>
+            <listEntry value="74">@Strings.settings_moon_illumination</listEntry>
             <listEntry value="56">@Strings.settings_hrs_next_sun_event</listEntry>
             <listEntry value="15">@Strings.settings_alternative_timezone_1</listEntry>
             <listEntry value="37">@Strings.settings_alternative_timezone_2</listEntry>
@@ -604,6 +607,7 @@
             <listEntry value="64">@Strings.settings_civil_dusk</listEntry>
             <listEntry value="72">@Strings.settings_golden_hour_end</listEntry>
             <listEntry value="73">@Strings.settings_golden_hour_start</listEntry>
+            <listEntry value="74">@Strings.settings_moon_illumination</listEntry>
             <listEntry value="56">@Strings.settings_hrs_next_sun_event</listEntry>
             <listEntry value="15">@Strings.settings_alternative_timezone_1</listEntry>
             <listEntry value="37">@Strings.settings_alternative_timezone_2</listEntry>
@@ -672,6 +676,7 @@
             <listEntry value="64">@Strings.settings_civil_dusk</listEntry>
             <listEntry value="72">@Strings.settings_golden_hour_end</listEntry>
             <listEntry value="73">@Strings.settings_golden_hour_start</listEntry>
+            <listEntry value="74">@Strings.settings_moon_illumination</listEntry>
             <listEntry value="56">@Strings.settings_hrs_next_sun_event</listEntry>
             <listEntry value="15">@Strings.settings_alternative_timezone_1</listEntry>
             <listEntry value="37">@Strings.settings_alternative_timezone_2</listEntry>
@@ -740,6 +745,7 @@
             <listEntry value="64">@Strings.settings_civil_dusk</listEntry>
             <listEntry value="72">@Strings.settings_golden_hour_end</listEntry>
             <listEntry value="73">@Strings.settings_golden_hour_start</listEntry>
+            <listEntry value="74">@Strings.settings_moon_illumination</listEntry>
             <listEntry value="56">@Strings.settings_hrs_next_sun_event</listEntry>
             <listEntry value="15">@Strings.settings_alternative_timezone_1</listEntry>
             <listEntry value="37">@Strings.settings_alternative_timezone_2</listEntry>
@@ -803,6 +809,7 @@
             <listEntry value="64">@Strings.settings_civil_dusk</listEntry>
             <listEntry value="72">@Strings.settings_golden_hour_end</listEntry>
             <listEntry value="73">@Strings.settings_golden_hour_start</listEntry>
+            <listEntry value="74">@Strings.settings_moon_illumination</listEntry>
             <listEntry value="56">@Strings.settings_hrs_next_sun_event</listEntry>
             <listEntry value="50">@Strings.settings_current_location_accuracy</listEntry>
             <listEntry value="45">@Strings.settings_next_calendar_event_time</listEntry>
@@ -845,6 +852,7 @@
             <listEntry value="64">@Strings.settings_civil_dusk</listEntry>
             <listEntry value="72">@Strings.settings_golden_hour_end</listEntry>
             <listEntry value="73">@Strings.settings_golden_hour_start</listEntry>
+            <listEntry value="74">@Strings.settings_moon_illumination</listEntry>
             <listEntry value="56">@Strings.settings_hrs_next_sun_event</listEntry>
             <listEntry value="50">@Strings.settings_current_location_accuracy</listEntry>
             <listEntry value="45">@Strings.settings_next_calendar_event_time</listEntry>
@@ -958,6 +966,7 @@
             <listEntry value="64">@Strings.settings_civil_dusk</listEntry>
             <listEntry value="72">@Strings.settings_golden_hour_end</listEntry>
             <listEntry value="73">@Strings.settings_golden_hour_start</listEntry>
+            <listEntry value="74">@Strings.settings_moon_illumination</listEntry>
             <listEntry value="56">@Strings.settings_hrs_next_sun_event</listEntry>
             <listEntry value="15">@Strings.settings_alternative_timezone_1</listEntry>
             <listEntry value="37">@Strings.settings_alternative_timezone_2</listEntry>

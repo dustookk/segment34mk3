@@ -30,12 +30,7 @@ function monthName(month as Number) as String {
     return _cachedMonthName;
 }
 
-function julianDay(year as Number, month as Number, day as Number) as Number {
-    var a = (14 - month) / 12;
-    var y = (year + 4800 - a);
-    var m = (month + 12 * a - 3);
-    return day + ((153 * m + 2) / 5) + (365 * y) + (y / 4) - (y / 100) + (y / 400) - 32045;
-}
+// julianDay moved to CelestialCalc.mc
 
 function isLeapYear(year as Number) as Boolean {
     if (year % 4 != 0) {

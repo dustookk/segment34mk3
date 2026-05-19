@@ -104,3 +104,71 @@ function getGoldenHour(weatherCondition as StoredWeather?) as Lang.Array {
     }
     return [];
 }
+
+// ── Moon calculations ─────────────────────────────────────────────────────────
+
+// Julian Day Number from calendar date.
+function julianDay(year as Number, month as Number, day as Number) as Number {
+    var a = (14 - month) / 12;
+    var y = (year + 4800 - a);
+    var m = (month + 12 * a - 3);
+    return day + ((153 * m + 2) / 5) + (365 * y) + (y / 4) - (y / 100) + (y / 400) - 32045;
+}
+
+// Moon illumination percentage (0–100).
+// Based on the synodic month length of 29.53059 days.
+// Known new moon epoch: JD 2459966 (2023-01-22).
+function moonIlluminationPercent(year as Number, month as Number, day as Number) as Number {
+    var jd = julianDay(year, month, day);
+    var days_since_new_moon = jd - 2459966;
+    var lunar_cycle = 29.53059;
+    var phase = (days_since_new_moon / lunar_cycle);
+    phase = phase - Math.floor(phase);
+    if (phase < 0) { phase += 1.0; }
+    var illum = (1.0 - Math.cos(2.0 * Math.PI * phase)) / 2.0 * 100.0;
+    return Math.round(illum).toNumber();
+}
+
+// Moon phase index (0–7) for the moon icon font.
+// 0 = new moon, 4 = full moon, 8 = "that's no moon" easter egg (May 4th).
+// Southern hemisphere inverts the phase (1↔7, 2↔6, 3↔5).
+function moonPhaseIndex(year as Number, month as Number, day as Number, propHemisphere as Number) as Number {
+    var jd = julianDay(year, month, day);
+    var days_since_new_moon = jd - 2459966;
+    var lunar_cycle = 29.53059;
+    var phase_frac = (days_since_new_moon / lunar_cycle);
+    phase_frac = phase_frac - Math.floor(phase_frac);
+    if (phase_frac < 0) { phase_frac += 1.0; }
+    var into_cycle = phase_frac * lunar_cycle;
+
+    if (month == 5 && day == 4) {
+        return 8;
+    }
+
+    var moonPhaseIdx;
+    if (into_cycle < 3) {
+        moonPhaseIdx = 0;
+    } else if (into_cycle < 6) {
+        moonPhaseIdx = 1;
+    } else if (into_cycle < 10) {
+        moonPhaseIdx = 2;
+    } else if (into_cycle < 14) {
+        moonPhaseIdx = 3;
+    } else if (into_cycle < 18) {
+        moonPhaseIdx = 4;
+    } else if (into_cycle < 22) {
+        moonPhaseIdx = 5;
+    } else if (into_cycle < 26) {
+        moonPhaseIdx = 6;
+    } else if (into_cycle < 29) {
+        moonPhaseIdx = 7;
+    } else {
+        moonPhaseIdx = 0;
+    }
+
+    if (propHemisphere == 1) {
+        moonPhaseIdx = (8 - moonPhaseIdx) % 8;
+    }
+
+    return moonPhaseIdx;
+}

@@ -192,6 +192,9 @@
     <string id="LABEL_GOLDEND_2">GS ENDE</string>
     <string id="LABEL_GOLDENS_1">GS ANF</string>
     <string id="LABEL_GOLDENS_2">GS ANFANG</string>
+    <string id="LABEL_MOON_ILLUM_1">M ILL</string>
+    <string id="LABEL_MOON_ILLUM_2">MOND BELEUCHT</string>
     <string id="settings_golden_hour_end" scope="settings">Goldene Stunde Ende (Morgen)</string>
     <string id="settings_golden_hour_start" scope="settings">Goldene Stunde Beginn (Abend)</string>
+    <string id="settings_moon_illumination" scope="settings">Mondbeleuchtung %</string>
 </strings>

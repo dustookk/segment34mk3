@@ -91,44 +91,7 @@ function goalPercent(val as Number, goal as Number) as Number {
 
 function moonPhase(time, propHemisphere as Number) as String {
     if (time == null) { return "0"; }
-    var jd = julianDay(time.year, time.month, time.day);
-
-    var days_since_new_moon = jd - 2459966;
-    var lunar_cycle = 29.53;
-    var phase = ((days_since_new_moon / lunar_cycle) * 100).toNumber() % 100;
-    var into_cycle = (phase / 100.0) * lunar_cycle;
-
-    if(time.month == 5 and time.day == 4) {
-        return "8"; // That's no moon!
-    }
-
-    var moonPhaseIdx;
-    if (into_cycle < 3) { // 2+1
-        moonPhaseIdx = 0;
-    } else if (into_cycle < 6) { // 4
-        moonPhaseIdx = 1;
-    } else if (into_cycle < 10) { // 4
-        moonPhaseIdx = 2;
-    } else if (into_cycle < 14) { // 4
-        moonPhaseIdx = 3;
-    } else if (into_cycle < 18) { // 4
-        moonPhaseIdx = 4;
-    } else if (into_cycle < 22) { // 4
-        moonPhaseIdx = 5;
-    } else if (into_cycle < 26) { // 4
-        moonPhaseIdx = 6;
-    } else if (into_cycle < 29) { // 3
-        moonPhaseIdx = 7;
-    } else {
-        moonPhaseIdx = 0;
-    }
-
-    // If hemisphere is 1 (southern), invert the phase index
-    if (propHemisphere == 1) {
-        moonPhaseIdx = (8 - moonPhaseIdx) % 8;
-    }
-
-    return moonPhaseIdx.toString();
+    return moonPhaseIndex(time.year, time.month, time.day, propHemisphere).toString();
 }
 
 function formatLabel(short as ResourceId, mid as ResourceId, size as Number) as String {

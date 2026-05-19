@@ -192,6 +192,9 @@
     <string id="LABEL_GOLDEND_2">OA FINE</string>
     <string id="LABEL_GOLDENS_1">OA INI</string>
     <string id="LABEL_GOLDENS_2">OA INIZIO</string>
+    <string id="LABEL_MOON_ILLUM_1">M ILL</string>
+    <string id="LABEL_MOON_ILLUM_2">ILLUM LUNA</string>
     <string id="settings_golden_hour_end" scope="settings">Fine ora dorata (mattino)</string>
     <string id="settings_golden_hour_start" scope="settings">Inizio ora dorata (sera)</string>
+    <string id="settings_moon_illumination" scope="settings">Illuminazione luna %</string>
 </strings>

@@ -191,6 +191,8 @@
     <string id="LABEL_GOLDEND_2">GH END</string>
     <string id="LABEL_GOLDENS_1">GH ST</string>
     <string id="LABEL_GOLDENS_2">GH START</string>
+    <string id="LABEL_MOON_ILLUM_1">M ILL</string>
+    <string id="LABEL_MOON_ILLUM_2">MOON ILLUM</string>
 
     <!-- Settings strings with scope="settings" -->
     <string id="settings_color_theme" scope="settings">Color Theme</string>
@@ -514,4 +516,5 @@
     <string id="settings_every_2_hours" scope="settings">Every 2 hours</string>
     <string id="settings_golden_hour_end" scope="settings">Golden hour end (morning)</string>
     <string id="settings_golden_hour_start" scope="settings">Golden hour start (evening)</string>
+    <string id="settings_moon_illumination" scope="settings">Moon illumination %</string>
 </strings>

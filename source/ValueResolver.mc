@@ -225,6 +225,7 @@ class ValueResolver {
             case 71: return "";
             case 72:
             case 73: return _weatherHelper.getGoldenHourFormatted(complicationType, width);
+            case 74: return getMoonIllumination();
         }
         return "";
     }
@@ -243,6 +244,11 @@ class ValueResolver {
     hidden function getWeekNumberFormatted() as String {
         var today = Time.Gregorian.info(Time.now(), Time.FORMAT_SHORT);
         return isoWeekNumber(today.year, today.month, today.day, _propWeekOffset).format("%d");
+    }
+
+    hidden function getMoonIllumination() as String {
+        var now = Time.Gregorian.info(Time.now(), Time.FORMAT_SHORT);
+        return moonIlluminationPercent(now.year, now.month, now.day).format("%d");
     }
 
     hidden function getUnitByType(complicationType as Number) as String {
@@ -351,6 +357,7 @@ class ValueResolver {
             case 71: return Application.loadResource(Rez.Strings.LABEL_MOONSET_1) as String;
             case 72: return formatLabel(Rez.Strings.LABEL_GOLDEND_1, Rez.Strings.LABEL_GOLDEND_2, labelSize);
             case 73: return formatLabel(Rez.Strings.LABEL_GOLDENS_1, Rez.Strings.LABEL_GOLDENS_2, labelSize);
+            case 74: return formatLabel(Rez.Strings.LABEL_MOON_ILLUM_1, Rez.Strings.LABEL_MOON_ILLUM_2, labelSize);
         }
         return "";
     }
