@@ -1099,7 +1099,7 @@ class Segment34View extends WatchUi.WatchFace {
         } else {
             // Garmin provider: original behavior unchanged.
             wxError = null;
-            if (Weather.getCurrentConditions() != null) {
+            if ((Weather has :getCurrentConditions) && Weather.getCurrentConditions() != null) {
                 try { weatherStorage.store(); } catch(e) {}
             }
             try { weatherCondition = weatherStorage.read(); } catch(e) {}

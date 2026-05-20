@@ -27,7 +27,10 @@ class WeatherStorage {
             isLowMem = false;
         }
 
-        var cc = Weather.getCurrentConditions();
+        var cc = null;
+        if (Weather has :getCurrentConditions) {
+            cc = Weather.getCurrentConditions();
+        }
         var newCcHash = _ccHash(cc);
 
         if (_lastCcHash == null || _lastCcHash != newCcHash) {
@@ -57,7 +60,10 @@ class WeatherStorage {
 
         if (isLowMem) { return; }
 
-        var hf = Weather.getHourlyForecast();
+        var hf = null;
+        if (Weather has :getHourlyForecast) {
+            hf = Weather.getHourlyForecast();
+        }
 
         if (hf == null || hf.size() == 0) { return; }
 

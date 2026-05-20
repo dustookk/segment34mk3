@@ -49,6 +49,7 @@ class Segment34ServiceDelegate extends System.ServiceDelegate {
         }
 
         if (!hasLocation) {
+            if (!(Weather has :getCurrentConditions)) { return; }
             var garminCc = Weather.getCurrentConditions();
             if (garminCc == null || garminCc.observationLocationPosition == null) { return; }
             var deg = garminCc.observationLocationPosition.toDegrees();
