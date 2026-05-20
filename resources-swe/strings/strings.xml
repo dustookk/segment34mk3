@@ -196,5 +196,5 @@
     <string id="LABEL_MOON_ILLUM_2">MÅNBELYSN</string>
     <string id="settings_golden_hour_end" scope="settings">Guldtimme slut (morgon)</string>
     <string id="settings_golden_hour_start" scope="settings">Guldtimme börjar (kväll)</string>
-    <string id="settings_moon_illumination" scope="settings">Månbelysning %</string>
+    <string id="settings_moon_illumination" scope="settings">Månbelysning % (ungefärlig)</string>
 </strings>

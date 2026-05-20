@@ -516,5 +516,5 @@
     <string id="settings_every_2_hours" scope="settings">Every 2 hours</string>
     <string id="settings_golden_hour_end" scope="settings">Golden hour end (morning)</string>
     <string id="settings_golden_hour_start" scope="settings">Golden hour start (evening)</string>
-    <string id="settings_moon_illumination" scope="settings">Moon illumination %</string>
+    <string id="settings_moon_illumination" scope="settings">Moon illumination % (approximate)</string>
 </strings>

@@ -196,5 +196,5 @@
     <string id="LABEL_MOON_ILLUM_2">ILLUM LUNA</string>
     <string id="settings_golden_hour_end" scope="settings">Fine ora dorata (mattino)</string>
     <string id="settings_golden_hour_start" scope="settings">Inizio ora dorata (sera)</string>
-    <string id="settings_moon_illumination" scope="settings">Illuminazione luna %</string>
+    <string id="settings_moon_illumination" scope="settings">Illuminazione luna % (approssimativa)</string>
 </strings>

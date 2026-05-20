@@ -196,5 +196,5 @@
     <string id="LABEL_MOON_ILLUM_2">MOND BELEUCHT</string>
     <string id="settings_golden_hour_end" scope="settings">Goldene Stunde Ende (Morgen)</string>
     <string id="settings_golden_hour_start" scope="settings">Goldene Stunde Beginn (Abend)</string>
-    <string id="settings_moon_illumination" scope="settings">Mondbeleuchtung %</string>
+    <string id="settings_moon_illumination" scope="settings">Mondbeleuchtung % (ungefähr)</string>
 </strings>
