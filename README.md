@@ -86,7 +86,7 @@ For refactorings and optimizations keep in mind that:
 1.7
 - Larger icons on high res screens
 - Value for Golden hour
-
+- Value for Moon illumination %
 
 1.6
 - Fixed issue where graph axises are shown when they shouldn't be
