@@ -15,6 +15,8 @@ char id=56 x=624 y=0 width=77 height=145 xoffset=0 yoffset=0 xadvance=83 page=0
 char id=57 x=702 y=0 width=77 height=145 xoffset=0 yoffset=0 xadvance=83 page=0
 char id=48 x=780 y=0 width=77 height=145 xoffset=0 yoffset=0 xadvance=83 page=0
 char id=58 x=858 y=0 width=77 height=145 xoffset=0 yoffset=0 xadvance=83 page=0
+char id=59 x=869 y=0 width=55 height=145 xoffset=0 yoffset=0 xadvance=61 page=0
+char id=33 x=0 y=0 width=0 height=145 xoffset=0 yoffset=0 xadvance=61 page=0
 
 char id=65 x=936 y=0 width=77 height=72 xoffset=0 yoffset=0 xadvance=83 page=0
 char id=66 x=936 y=0 width=77 height=145 xoffset=0 yoffset=0 xadvance=83 page=0

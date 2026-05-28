@@ -1406,6 +1406,7 @@
                 <listEntry value="1">@Strings.settings_blank_space</listEntry>
                 <listEntry value="2">@Strings.settings_no_separator</listEntry>
                 <listEntry value="3">@Strings.settings_ampm</listEntry>
+                <listEntry value="5">@Strings.settings_narrow_colon</listEntry>
             </settingConfig>
     </setting>
 

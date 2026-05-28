@@ -342,6 +342,8 @@ class Segment34View extends WatchUi.WatchFace {
             clockBgText = "####";
         } else if(propTimeSeparator == 3) {
             clockBgText = "####B";
+        } else if(propTimeSeparator == 5) {
+            clockBgText = "##!##";
         } else {
             if(propClockFont == 2) {
                 clockBgText = "## ##";
@@ -1011,6 +1013,7 @@ class Segment34View extends WatchUi.WatchFace {
             separator = ""; 
             if(now.hour >= 12) { after = "P"; } else { after = "A"; }
         }
+        if(propTimeSeparator == 5) { separator = ";"; }
 
         if(propZeropadHour) {
             return formatHour(now.hour, propIs24H, propHourFormat).format("%02d") + separator + now.min.format("%02d") + after;
