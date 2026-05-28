@@ -78,15 +78,16 @@ For refactorings and optimizations keep in mind that:
 | `resources/drawables/` | Images and drawable definitions (launcher icon, AOD overlays) |
 | `resources-{deu,fre,ita,pol,spa,swe}/` | Translated strings for 6 languages; must stay in sync with English |
 
- ## Things people have asked for (may or may not be implemented)
-
+## Things people have asked for (may or may not be implemented)
+ - Narrower ":"
+ - Phone connection
 
 
 ## Change log
 1.7
 - Larger icons on high res screens
 - Value for Golden hour
-- Value for Moon illumination %
+- Value for Moon illumination % (approximate)
 - Fixed crash
 
 1.6
