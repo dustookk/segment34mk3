@@ -32,3 +32,6 @@ char id=83 x=356 y=0 width=20 height=20 xoffset=0 yoffset=0 xadvance=20 page=0
 char id=84 x=378 y=0 width=60 height=28 xoffset=0 yoffset=0 xadvance=60 page=0
 char id=85 x=439 y=0 width=20 height=20 xoffset=0 yoffset=0 xadvance=20 page=0
 char id=86 x=460 y=0 width=20 height=20 xoffset=0 yoffset=0 xadvance=20 page=0
+
+char id=87 x=758 y=0 width=15 height=20 xoffset=0 yoffset=0 xadvance=15 page=0
+char id=88 x=774 y=0 width=15 height=20 xoffset=0 yoffset=0 xadvance=15 page=0

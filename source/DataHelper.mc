@@ -307,6 +307,13 @@ class DataHelper {
                 var complication = Complications.getComplication(new Complications.Id(Complications.COMPLICATION_TYPE_TRAINING_STATUS));
                 if(complication != null && complication.value != null) { return "V"; }
             } catch(e) {}
+        } else if(setting == 9) { // Phone connected
+            var pc = System.getDeviceSettings().phoneConnected;
+            if(pc != null && pc) {
+                return "W";
+            } else {
+                return "X";
+            }
         }
         return "";
     }

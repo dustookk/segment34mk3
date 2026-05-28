@@ -197,4 +197,5 @@
     <string id="settings_golden_hour_end" scope="settings">Koniec złotej godziny (rano)</string>
     <string id="settings_golden_hour_start" scope="settings">Początek złotej godziny (wieczór)</string>
     <string id="settings_moon_illumination" scope="settings">Oświetlenie księżyca % (przybliżone)</string>
+    <string id="settings_phone_connected" scope="settings">Telefon podłączony</string>
 </strings>

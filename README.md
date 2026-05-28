@@ -84,6 +84,10 @@ For refactorings and optimizations keep in mind that:
 
 
 ## Change log
+1.8
+- Option for a narrow ":" separating hours and min
+- Icon for Phone connected
+
 1.7
 - Larger icons on high res screens
 - Value for Golden hour

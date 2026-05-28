@@ -363,6 +363,7 @@
     <string id="settings_altitude_m_2" scope="settings">Altitude (m)</string>
     <string id="settings_altitude_ft_2" scope="settings">Altitude (ft)</string>
     <string id="settings_training_status" scope="settings">Training status</string>
+    <string id="settings_phone_connected" scope="settings">Phone connected</string>
     <string id="settings_military_date_time" scope="settings">Millitary Date Time Group (UTC)</string>
     <string id="settings_current_location_lat_long" scope="settings">Current Location (Lat Long in Decimal Degrees)</string>
     <string id="settings_current_location_military" scope="settings">Current Location (Military Grid Reference System)</string>

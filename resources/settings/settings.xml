@@ -882,6 +882,7 @@
                 <listEntry value="6">@Strings.settings_notification_icon</listEntry>
                 <listEntry value="7">@Strings.settings_notification_icon_with_count</listEntry>
                 <listEntry value="8">@Strings.settings_training_status</listEntry>
+                <listEntry value="9">@Strings.settings_phone_connected</listEntry>
             </settingConfig>
     </setting>
 
@@ -896,6 +897,7 @@
             <listEntry value="6">@Strings.settings_notification_icon</listEntry>
             <listEntry value="7">@Strings.settings_notification_icon_with_count</listEntry>
             <listEntry value="8">@Strings.settings_training_status</listEntry>
+            <listEntry value="9">@Strings.settings_phone_connected</listEntry>
         </settingConfig>
     </setting>
     

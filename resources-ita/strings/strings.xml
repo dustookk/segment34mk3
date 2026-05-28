@@ -197,4 +197,5 @@
     <string id="settings_golden_hour_end" scope="settings">Fine ora dorata (mattino)</string>
     <string id="settings_golden_hour_start" scope="settings">Inizio ora dorata (sera)</string>
     <string id="settings_moon_illumination" scope="settings">Illuminazione luna % (approssimativa)</string>
+    <string id="settings_phone_connected" scope="settings">Telefono connesso</string>
 </strings>
