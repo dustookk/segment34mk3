@@ -176,7 +176,7 @@ class WeatherDisplayHelper {
     function getUVIndex() as String {
         var ret = "";
         if (_w != null and (_w as StoredWeather).uvIndex != null) {
-            ret = (_w as StoredWeather).uvIndex.format("%d");
+            ret = Math.round((_w as StoredWeather).uvIndex).format("%d");
         }
         return ret;
     }
